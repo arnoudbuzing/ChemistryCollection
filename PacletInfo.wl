@@ -1,7 +1,7 @@
 PacletObject[
   <|
     "Name" -> "WolframExternalFunctions/ChemistryCollection",
-    "Description" -> "One-line description of the paclet",
+    "Description" -> "A collection of external functions in the area of chemistry",
     "Creator" -> "Arnoud Buzing",
     "Version" -> "1.0.0",
     "WolframVersion" -> "14.0+",
@@ -15,6 +15,9 @@ PacletObject[
         "Root" -> "Kernel",
         "Context" -> {
           "WolframExternalFunctions`ChemistryCollection`"
+        },
+        "Symbols" -> {
+          "WolframExternalFunctions`ChemistryCollection`ArrheniusEquation"
         }
       },
       {
