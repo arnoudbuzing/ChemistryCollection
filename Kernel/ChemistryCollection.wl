@@ -36,13 +36,27 @@ $ChemistryCollection = { "chempy" };
 
 (* ArrheniusEquation *)
 
+ArrheniusEquation[frequencyFactor_, activationEnergy_, temperature_] := 
+    frequencyFactor*Exp[-activationEnergy/(Entity["PhysicalConstant", "MolarGasConstant"]["Value"]*temperature)];
+
+(* 
+    
+    The arguments are: 
+
+    frequencyFactor: the frequency factor with units of s^-1
+    activationEnergy: the activation energy with units of J/mol
+    temperature: the temperature with units of K
+
+*)
+
+(*
 ArrheniusEquation[frequencyFactor_, activationEnergy_, temperature_ ] := 
     LoadExternalFunction["Python", "chempy.kinetics.arrhenius.arrhenius_equation"][frequencyFactor, activationEnergy, temperature];
 
 ArrheniusEquation::notes = ""; 
 
 ArrheniusEquation::example = "ArrheniusEquation[1.0*^13, 40.0*^3, 298.0]";
-
+*)
 
 End[];
 
