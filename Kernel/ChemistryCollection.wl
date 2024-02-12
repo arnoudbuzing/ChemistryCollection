@@ -36,8 +36,10 @@ $ChemistryCollection = { "chempy" };
 
 (* ArrheniusEquation *)
 
-ArrheniusEquation[frequencyFactor_, activationEnergy_, temperature_] := 
+ArrheniusEquation[frequencyFactor_Quantity, activationEnergy_Quantity, temperature_Quantity] := 
     frequencyFactor*Exp[-activationEnergy/(Entity["PhysicalConstant", "MolarGasConstant"]["Value"]*temperature)];
+
+
 
 (* 
     
@@ -57,6 +59,19 @@ ArrheniusEquation::notes = "";
 
 ArrheniusEquation::example = "ArrheniusEquation[1.0*^13, 40.0*^3, 298.0]";
 *)
+
+
+
+EyringEquation[gibbsFreeEnergy_Quantity, temperature_Quantity] := 
+    ( Quantity[1, "BoltzmannConstant"] * temperature / Quantity["PlanckConstant"] ) * Exp[ -gibbsFreeEnergy / ( Quantity[1, "MolarGasConstant"] * temperature ) ]
+
+(*
+    The arguments are:
+    gibbsFreeEnergy: the Gibbs free energy with units of J/mol
+    temperature: the temperature with units of K
+
+*)
+
 
 End[];
 
